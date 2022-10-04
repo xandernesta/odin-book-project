@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Mochiy+Pop+One&family=Permanent+Marker&family=Roboto:ital,wght@1,100&family=Fraunces&family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
+/* import fonts: 'Cinzel' , 'Mochiy Pop One', 'Permanent Marker', 'Roboto', 'Fraunces', 'Poppins' */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Fraunces', serif;
+}
+
+/* Content styling */
+header,
+main {
+  max-width: 1520px;
+  padding: 0 40px;
+}
+
+header {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 48px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Footer Styling */
+ a {
+    text-decoration:none;
+    color: inherit
+  }
+  
+  .footer {
+    font-family: 'Mochiy Pop One';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    font-size: 16px;
+  }
+  
+  .xn-github {
+    color: black;
+    font-size: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: -4px;
+  }
+  
+  .xn-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
