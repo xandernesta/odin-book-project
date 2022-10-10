@@ -8,7 +8,7 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(200, 210, 221);
-
+    overflow:hidden;
 }
 
 h1,
@@ -21,6 +21,7 @@ header,
 main {
   /* max-width: 1520px; */
   padding: 0 40px;
+  
 }
 
 header {
@@ -43,23 +44,55 @@ header h1 {
 
 /* Card styling */
 .card {
-  padding: 1vh 1vh 1vh;
-  min-height: 20vh;
+  padding: 1vh 1vh .5vh;
+  min-height: 16vh;
   width: 20vh;
   border-radius: 5px;
-  background-color: #F2CC8F;
+  background-color: hsl(278, 36%, 43%);
   box-shadow: inset rgba(0,0,0,.15) 0 0 0 1px;
 }
 
 .card h2 {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
+  font-size: 20px;
   margin: 0 0 5px;
 }
 
 .card p {
   margin: 0 0 10px;
+  font-size: 16px;
 }
+
+.card .details {
+  font-size: 14px;
+}
+
+.card .read{
+  color:  #38a084;
+  font-weight: 600;
+}
+
+.card .not-read{
+  color: #ee5053;
+  font-weight: 600;
+}
+
+.delete {
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: #CD4345;
+  transition: all .2s;
+  transform: scale(1.15);
+}
+
+.details .bold{
+  font-weight: 600
+}
+
 /*End Card styling*/
 .main-container {
   display: flex;
@@ -87,14 +120,16 @@ header h1 {
 
 .books-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto; 
-  grid-template-rows: 1fr 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr ; 
+  grid-template-rows: 1fr 1fr 1fr;
   row-gap: 4vh;
   column-gap: 1vh;
   margin-left: 32vh;
   justify-items: center;
   font-size: 20px;
   width: 60%;
+  height: 80vh;
+  overflow-y: scroll;
 }
 
   
