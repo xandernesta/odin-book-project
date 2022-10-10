@@ -82,7 +82,7 @@ addBookToLibrary(myBook3);
 addBookToLibrary(myBook4);
 addBookToLibrary(myBook5);
 addBookToLibrary(myBook6);
-addBookToLibrary(myBook7);
+/* addBookToLibrary(myBook7);
 addBookToLibrary(myBook);
 addBookToLibrary(myBook2);
 addBookToLibrary(myBook3);
@@ -90,6 +90,6 @@ addBookToLibrary(myBook4);
 addBookToLibrary(myBook5);
 addBookToLibrary(myBook6);
 addBookToLibrary(myBook7);
-addBookToLibrary(myBook);
+addBookToLibrary(myBook); */
 
 window.onload = () => {displayBooks();}

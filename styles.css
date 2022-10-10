@@ -8,7 +8,7 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(200, 210, 221);
-    overflow:hidden;
+    overflow: auto;
 }
 
 h1,
@@ -128,8 +128,8 @@ header h1 {
   justify-items: center;
   font-size: 20px;
   width: 60%;
-  height: 80vh;
-  overflow-y: scroll;
+  height: 65vh;
+  overflow-y: auto;
   scrollbar-width: thin;
 }
 
