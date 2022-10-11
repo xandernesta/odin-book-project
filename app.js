@@ -1,14 +1,50 @@
 const bookContainer = document.querySelector('.books-container');
-
-
-
+const addButton = document.querySelector('.add-button');
+const deleteButtons = document.querySelectorAll('.delete');
 let myLibrary = [];
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+}
+
+function startListeners(){
+addButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    let newTitle = document.getElementById('title');
+    let newAuthor = document.getElementById('author');
+    let newPages = document.getElementById('total pages');
+    let newRead = document.getElementById('checkbox');
+    
+    if(newTitle.value === ''){
+        alert("Please enter a Book title");
+        e.preventDefault();
+    }else if(newAuthor.value === '' ){
+        alert("Please enter an Author for the book");
+        e.preventDefault();
+    }else if(newPages.value === ''){
+        alert("Please enter the number of pages for the book");
+        e.preventDefault();
+    }else{ 
+        let newBook = new Book(newTitle.value, newAuthor.value, newPages.value, newRead.checked);
+        addBookToLibrary(newBook);
+        clearLibrary();
+        displayBooks();
+    }
+});
+
+document.addEventListener('click', (event) => { deleteBook(event)});
+}
+
+function deleteBook(event){
+    if (event.target.className ==='delete fa-solid fa-x'){
+        const index = event.target.parentElement.getAttribute('data-index');
+        myLibrary.splice(index, 1);
+        clearLibrary();
+        displayBooks();
+    }
+    
 }
 
 function addBookToLibrary(book){
@@ -61,6 +97,10 @@ function displayBooks(){
     }
 }
 
+function clearLibrary(){
+    bookContainer.textContent = '';
+}
+
 const Twilight = new Book('Twilight', 'Stephenie Meyer', '498', false);
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
 const myBook = new Book('My Book', 'Me', 69, true);
@@ -78,10 +118,10 @@ addBookToLibrary(myBook3);
 addBookToLibrary(theHobbit);
 addBookToLibrary(myBook);
 addBookToLibrary(myBook2);
-addBookToLibrary(myBook3);
+/* addBookToLibrary(myBook3);
 addBookToLibrary(myBook4);
 addBookToLibrary(myBook5);
-addBookToLibrary(myBook6);
+addBookToLibrary(myBook6); */
 /* addBookToLibrary(myBook7);
 addBookToLibrary(myBook);
 addBookToLibrary(myBook2);
@@ -92,4 +132,4 @@ addBookToLibrary(myBook6);
 addBookToLibrary(myBook7);
 addBookToLibrary(myBook); */
 
-window.onload = () => {displayBooks();}
+window.onload = () => {displayBooks(); startListeners();}
