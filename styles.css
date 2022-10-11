@@ -4,9 +4,11 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 95vh;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    background-color: rgb(200, 210, 221);
+    overflow: auto;
 }
 
 h1,
@@ -17,12 +19,12 @@ h2 {
 /* Content styling */
 header,
 main {
-  max-width: 1520px;
+  /* max-width: 1520px; */
   padding: 0 40px;
+  
 }
 
 header {
-  margin-bottom: 40px;
   width: 100%;
 }
 
@@ -31,7 +33,164 @@ header h1 {
   text-align: center;
 }
 
+.info {
+    width: 70%;
+    text-align: center;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
 
+/* Card styling */
+.card {
+  padding: 1vh 1vh .5vh;
+  min-height: 16vh;
+  width: 20vh;
+  border-radius: 5px;
+  background-color: hsl(278, 59%, 36%);
+  box-shadow: inset rgba(0,0,0,.15) 0 0 0 1px;
+}
+
+.card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
+.card p {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.card .details {
+  font-size: 14px;
+}
+
+.card .read{
+  color:  #38a084;
+  font-weight: 600;
+}
+
+.card .not-read{
+  color: #ee5053;
+  font-weight: 600;
+}
+
+.delete {
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: #CD4345;
+  transition: all .2s;
+  transform: scale(1.15);
+}
+
+.details .bold{
+  font-weight: 600
+}
+
+/*End Card styling*/
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justify-items: center;
+  width:190vh;
+}
+
+.add-book-panel {
+    font-family: 'Fraunces', serif;
+    position: fixed;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    /*top: 10vh; */
+    min-height: 50vh;
+    max-height: 80vh;
+    width: 25%;
+    max-width: 28vh;
+    background-color: rgb(70, 130, 151);
+    box-shadow: 2px 0 2px -2px gray;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ; 
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 4vh;
+  column-gap: 1vh;
+  margin-left: 32vh;
+  justify-items: center;
+  font-size: 20px;
+  width: 60%;
+  height: 65vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+  
+form {
+    position: relative;
+    top: 1vh;
+    height: 30vh;
+    width: 22vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.read-checkbox {
+    margin:0; 
+}
+
+.read-checkbox label {
+    width: 1vh;
+    height: 1vh;
+    display: block;
+}
+
+label{
+    margin-top: 1vh;
+}
+
+.read-checkbox input {
+    position: relative;
+    z-index: -9999;
+}
+
+.add-button{
+    width: 16vh;
+    margin: 3vh;
+}
+
+.submit-button{
+    width: 16vh;
+    margin: 1vh;
+}
+
+
+button {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgb(240, 154, 26);
+    padding: .75vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border: 1px solid rgb(12, 0, 0);
+    color: black;
+    text-decoration: none;
+  }
+  
+  button:hover {
+    opacity: 85%;
+    cursor: pointer;
+  }
 
 
 
