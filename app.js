@@ -1,7 +1,8 @@
 const bookContainer = document.querySelector('.books-container');
 const addButton = document.querySelector('.add-button');
 const deleteButtons = document.querySelectorAll('.delete');
-let myLibrary = [];
+var myLibrary = [];
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -10,6 +11,7 @@ function Book(title, author, pages, read) {
 }
 
 function startListeners(){
+//listener for click the "Add Book" button
 addButton.addEventListener('click', (e) => {
     e.preventDefault();
     let newTitle = document.getElementById('title');
@@ -31,20 +33,14 @@ addButton.addEventListener('click', (e) => {
         addBookToLibrary(newBook);
         clearLibrary();
         displayBooks();
+        clearForm();
     }
 });
+//listener for click events on the "X" button of the cards
+document.addEventListener('click', (event) => {deleteBook(event)});
+//listener for click events on the change status button next to Read status on the cards
+document.addEventListener('click', (event) => {changeReadStatus(event)});
 
-document.addEventListener('click', (event) => { deleteBook(event)});
-}
-
-function deleteBook(event){
-    if (event.target.className ==='delete fa-solid fa-x'){
-        const index = event.target.parentElement.getAttribute('data-index');
-        myLibrary.splice(index, 1);
-        clearLibrary();
-        displayBooks();
-    }
-    
 }
 
 function addBookToLibrary(book){
@@ -93,12 +89,44 @@ function displayBooks(){
         spanStatusClass.classList.add((myLibrary[i].read) ? 'read' : 'not-read');
         spanStatusClass.appendChild(textStatus);
         pRead.appendChild(spanStatusClass);
+        //add change status icon
+        const changeStatusIcon = document.createElement('i');
+        changeStatusIcon.classList.add('read-change','fa-solid','fa-arrow-right-arrow-left');
+        pRead.appendChild(changeStatusIcon);
+    }
+}
+function clearLibrary(){
+    bookContainer.textContent = '';
+}
 
+function deleteBook(event){
+    if (event.target.className === 'delete fa-solid fa-x'){
+        const index = event.target.parentNode.getAttribute('data-index');
+        console.log(`${index}`);
+        myLibrary.splice(index, 1);
+        clearLibrary();
+        displayBooks();
     }
 }
 
-function clearLibrary(){
-    bookContainer.textContent = '';
+function changeReadStatus(event){
+    if (event.target.className === 'read-change fa-solid fa-arrow-right-arrow-left'){
+        //when just using .parentNode, i was coming back null because the parent was the P element and not the div above, had to use .closest to get the index
+        const i = event.target.parentNode.closest('div').getAttribute('data-index');
+        console.log(`${i}`);
+        if(myLibrary[i].read === true){
+            myLibrary[i].read = false;
+        }else{
+            myLibrary[i].read = true; 
+        }
+        clearLibrary();
+        displayBooks();
+    }
+}
+
+function clearForm(){
+    const addBookForm = document.querySelector('.add-form');
+    addBookForm.reset();
 }
 
 const Twilight = new Book('Twilight', 'Stephenie Meyer', '498', false);
@@ -132,4 +160,7 @@ addBookToLibrary(myBook6);
 addBookToLibrary(myBook7);
 addBookToLibrary(myBook); */
 
-window.onload = () => {displayBooks(); startListeners();}
+/* window.onload = () => { */
+displayBooks(); 
+startListeners()
+//;}

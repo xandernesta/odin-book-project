@@ -5,6 +5,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 95vh;
+    width: 100%;
+    margin:0;
     align-items: center;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(200, 210, 221);
@@ -24,9 +26,9 @@ main {
   
 }
 
-header {
-  width: 100%;
-}
+/* header {
+  width: 100%; 
+} */
 
 header h1 {
   font-size: 48px;
@@ -77,6 +79,10 @@ header h1 {
   font-weight: 600;
 }
 
+.details .read-change{
+  display: inline-;
+}
+
 .delete {
   float: right;
   font-size: 15px;
@@ -93,26 +99,38 @@ header h1 {
   font-weight: 600
 }
 
+
+
+.read-change{
+  font-size: 12px;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.read-change:hover{
+  color:cadetblue;
+  transform: scale(1.15);
+}
+
 /*End Card styling*/
 .main-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   justify-items: center;
-  width:190vh;
+  width:130vh;
 }
 
 .add-book-panel {
     font-family: 'Fraunces', serif;
-    position: fixed;
+    position: relative;
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
     align-items: center;
-    /*top: 10vh; */
     min-height: 50vh;
     max-height: 80vh;
-    width: 25%;
+    width: 20%;
     max-width: 28vh;
     background-color: rgb(70, 130, 151);
     box-shadow: 2px 0 2px -2px gray;
@@ -123,11 +141,10 @@ header h1 {
   grid-template-columns: 1fr 1fr 1fr 1fr ; 
   grid-template-rows: 1fr 1fr 1fr;
   row-gap: 4vh;
-  column-gap: 1vh;
-  margin-left: 32vh;
+  column-gap: 2vh;
+  margin-left: 6vh;
   justify-items: center;
   font-size: 20px;
-  width: 60%;
   height: 65vh;
   overflow-y: auto;
   scrollbar-width: thin;
@@ -135,17 +152,17 @@ header h1 {
 
   
 form {
-    position: relative;
-    top: 1vh;
-    height: 30vh;
-    width: 22vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  position: relative;
+  top: 1vh;
+  height: 30vh;
+  width: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .read-checkbox {
-    margin:0; 
+    margin: 2px;; 
 }
 
 .read-checkbox label {
@@ -160,12 +177,14 @@ label{
 
 .read-checkbox input {
     position: relative;
-    z-index: -9999;
+    z-index: 0;
+    margin:0;
 }
 
 .add-button{
     width: 16vh;
-    margin: 3vh;
+    margin: 2vh;
+    font-weight: bold;
 }
 
 .submit-button{
@@ -175,36 +194,22 @@ label{
 
 
 button {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background-color: rgb(240, 154, 26);
-    padding: .75vh;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    border: 1px solid rgb(12, 0, 0);
-    color: black;
-    text-decoration: none;
-  }
-  
-  button:hover {
-    opacity: 85%;
-    cursor: pointer;
-  }
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: rgb(240, 154, 26);
+  padding: .75vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  border: 1px solid rgb(12, 0, 0);
+  color: black;
+  text-decoration: none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+button:hover {
+  opacity: 85%;
+  cursor: pointer;
+}
 
 
  /* Footer Styling */
@@ -221,7 +226,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     font-size: 16px;
   }
   
